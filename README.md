@@ -39,7 +39,7 @@ Open PowerShell or the VS Code terminal and copy these commands:
 
 ```powershell
 cd G:\python\password-manager
-.\.venv\Scripts\python.exe main.py
+python main.py
 ```
 
 If you see the help menu, the project is running correctly.
@@ -47,7 +47,7 @@ If you see the help menu, the project is running correctly.
 To add your first password:
 
 ```powershell
-.\.venv\Scripts\python.exe main.py add github avina "my-password"
+python main.py add github avina "my-password"
 ```
 
 After you press Enter, the program asks for:
@@ -67,12 +67,12 @@ Use the same master password every time you run this project.
 This command:
 
 ```powershell
-.\.venv\Scripts\python.exe main.py add github avina "my-password"
+python main.py add github avina "my-password"
 ```
 
 means:
 
-- `.\.venv\Scripts\python.exe` runs Python from this project's virtual environment
+- `python` runs Python on your machine
 - `main.py` starts the password manager
 - `add` tells the program to save a new password
 - `github` is the service name
@@ -127,7 +127,7 @@ cd G:\python\password-manager
 Then run:
 
 ```powershell
-.\.venv\Scripts\python.exe main.py
+python main.py
 ```
 
 This shows the help menu.
@@ -146,27 +146,21 @@ Run this first:
 cd G:\python\password-manager
 ```
 
-## If The Virtual Environment Does Not Exist
+## Optional: Use A Virtual Environment
 
-If this command does not work:
-
-```powershell
-.\.venv\Scripts\python.exe main.py
-```
-
-Create the virtual environment:
+If you want to isolate this project from other Python projects, create a virtual environment:
 
 ```powershell
 python -m venv .venv
 ```
 
-Install the required packages:
+Then install the required packages:
 
 ```powershell
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
 
-Now run the app again:
+After that, run the app with the virtual environment Python:
 
 ```powershell
 .\.venv\Scripts\python.exe main.py
@@ -177,7 +171,7 @@ Now run the app again:
 ### Add A Password
 
 ```powershell
-.\.venv\Scripts\python.exe main.py add github avina "my-password"
+python main.py add github avina "my-password"
 ```
 
 You will see:
@@ -193,7 +187,7 @@ The password text will not show while typing. That is normal.
 ### List Saved Services
 
 ```powershell
-.\.venv\Scripts\python.exe main.py list
+python main.py list
 ```
 
 This shows the services saved in your vault.
@@ -203,7 +197,7 @@ It does not show the passwords.
 ### Get A Password
 
 ```powershell
-.\.venv\Scripts\python.exe main.py get github
+python main.py get github
 ```
 
 This copies the password to your clipboard.
@@ -213,7 +207,7 @@ If clipboard copy is not available, use `--show`.
 ### Get A Password And Show It In Terminal
 
 ```powershell
-.\.venv\Scripts\python.exe main.py get github --show
+python main.py get github --show
 ```
 
 Use this only when you are okay with the password being visible on screen.
@@ -221,7 +215,7 @@ Use this only when you are okay with the password being visible on screen.
 ### Generate A Strong Password
 
 ```powershell
-.\.venv\Scripts\python.exe main.py generate --length 24
+python main.py generate --length 24
 ```
 
 This prints a random password.
@@ -233,7 +227,7 @@ To save a generated password, copy it and then use the `add` command.
 ### Delete A Saved Password
 
 ```powershell
-.\.venv\Scripts\python.exe main.py delete github
+python main.py delete github
 ```
 
 ## Example Full Run
@@ -241,11 +235,11 @@ To save a generated password, copy it and then use the `add` command.
 ```powershell
 cd G:\python\password-manager
 
-.\.venv\Scripts\python.exe main.py add github avina "my-password"
-.\.venv\Scripts\python.exe main.py list
-.\.venv\Scripts\python.exe main.py get github --show
-.\.venv\Scripts\python.exe main.py generate --length 24
-.\.venv\Scripts\python.exe main.py delete github
+python main.py add github avina "my-password"
+python main.py list
+python main.py get github --show
+python main.py generate --length 24
+python main.py delete github
 ```
 
 ## Running From VS Code
@@ -280,7 +274,7 @@ Then run the command again.
 
 This usually means you are using the wrong Python interpreter.
 
-Use the virtual environment Python:
+If you are using a virtual environment, run:
 
 ```powershell
 .\.venv\Scripts\python.exe main.py
@@ -289,7 +283,7 @@ Use the virtual environment Python:
 Or install dependencies:
 
 ```powershell
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
 ### Error: Incorrect master password
