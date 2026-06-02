@@ -1,10 +1,8 @@
 # CLI Password Manager
 
-This is a beginner-friendly Python command-line password manager.
+This is a Python command-line password manager that stores saved passwords in an encrypted JSON vault.
 
-It is built as a resume project to show Python CLI development, object-oriented programming, encrypted storage, and clean project structure.
-
-It can:
+The app supports:
 
 - Add a password for a service
 - Get a saved password
@@ -13,7 +11,7 @@ It can:
 - Generate a strong random password
 - Encrypt saved passwords inside `vault.json`
 
-The project uses a master password. You must type the same master password every time you run a command.
+Each command asks for a master password. The same master password is needed every time because it is used to unlock the vault.
 
 ## Features
 
@@ -329,9 +327,9 @@ crypto.py handles encryption and decryption.
 vault.json stores encrypted data.
 ```
 
-## Notes For Recruiters
+## What This Project Shows
 
-This project demonstrates:
+This project shows:
 
 - Python CLI development with `argparse`
 - Object-oriented programming with a `PasswordManager` class
@@ -340,26 +338,3 @@ This project demonstrates:
 - Key derivation from a master password using PBKDF2HMAC
 - Clipboard support with `pyperclip`
 - Clean separation between CLI, business logic, and crypto logic
-
-## GitHub Upload Notes
-
-These files should be uploaded to GitHub:
-
-```text
-main.py
-manager.py
-crypto.py
-requirements.txt
-README.md
-.gitignore
-```
-
-These files and folders should not be uploaded:
-
-```text
-.venv/
-vault.json
-__pycache__/
-```
-
-They are already listed in `.gitignore`.
