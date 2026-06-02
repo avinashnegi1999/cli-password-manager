@@ -1,0 +1,12 @@
+# ! Never commit encrypted vault data or local environment files.
+vault.json
+
+# * Python cache files
+__pycache__/
+*.py[cod]
+
+# * Virtual environments
+.venv/
+venv/
+
+# TODO Add packaging/build ignores if this project becomes installable.

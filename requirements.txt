@@ -1,0 +1,5 @@
+# * Runtime dependencies
+cryptography>=42.0.0
+pyperclip>=1.8.2
+
+# TODO Pin exact versions for fully reproducible deployments when you ship this.
